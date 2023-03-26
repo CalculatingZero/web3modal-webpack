@@ -1,4 +1,6 @@
+import _ from 'lodash';
 import { SafeConnector } from '@wagmi/core/connectors/safe'
+import { MetaMaskConnector } from '@wagmi/connectors/metaMask'
 import {
     configureChains,
     createClient,
@@ -16,6 +18,7 @@ import { Web3Modal } from '@web3modal/html'
 
 window.w3m = {Web3Modal,EthereumClient, w3mConnectors, w3mProvider};
 window.wagmi = {
+    MetaMaskConnector,
     SafeConnector,
     configureChains,
     createClient,
@@ -27,5 +30,5 @@ window.wagmi = {
     writeContract,
     prepareWriteContract,
     getAccount,
-    chains: {mainnet, goerli},
+    chains: {mainnet, goerli}
 };

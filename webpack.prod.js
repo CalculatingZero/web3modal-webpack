@@ -3,6 +3,8 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+// const zlib = require("zlib");
+// const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = merge(common, {
   mode: 'production',
@@ -22,5 +24,20 @@ module.exports = merge(common, {
       new CssMinimizerPlugin(),
     ],
   },
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin(),
+    // new CompressionPlugin({
+    //   filename: "[path][base].br",
+    //   algorithm: "brotliCompress",
+    //   test: /\.(js|css|html|svg)$/,
+    //   compressionOptions: {
+    //     params: {
+    //       [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+    //     },
+    //   },
+    //   threshold: 10240,
+    //   minRatio: 0.8,
+    //   deleteOriginalAssets: false,
+    // }),
+  ],
 });
