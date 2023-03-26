@@ -8,3 +8,5 @@ Known Issues:
 
 1. Must clear borwsing data after connecting once for qr code to appear.
 2. On mobile devices metamask link does not load.
+
+This webpack was used to create and deploy this [WallectConnectV2 test site](https://web3modalv2-testsite.vercel.app)
